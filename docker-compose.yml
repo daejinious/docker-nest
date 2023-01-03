@@ -1,4 +1,4 @@
-version: '1'
+version: '2'
 services:
   nginx:
     restart: always
@@ -20,3 +20,15 @@ services:
       - /usr/app/node_modules
       - ./NestBack:/usr/app
     command: ['npm', 'run', 'start:dev']
+
+  db:
+    restart: always
+    build:
+      dockerfile: dev.Dockerfile
+      context: ./Database
+    env_file:
+      - .env
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./Database/dev/data:/var/lib/postgresql/data
