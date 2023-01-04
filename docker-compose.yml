@@ -32,3 +32,18 @@ services:
       - '5432:5432'
     volumes:
       - ./Database/dev/data:/var/lib/postgresql/data
+
+  mysql:
+    restart: always
+    build:
+      dockerfile: dev.Dockerfile
+      context: ./Mysql
+    env_file:
+      - .env
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./Mysql/dev/data:/var/lib/mysql
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci

@@ -10,4 +10,9 @@ export class User {
 
   @Column()
   name: string;
+
+  @Column({
+    nullable: true,
+  })
+  phone?: string;
 }
