@@ -6,7 +6,7 @@ export const typeORMConfig: TypeOrmModuleOptions = {
   port: 5432,
   username: 'commercelab',
   password: 'commercelab',
-  database: 'commercelab',
+  database: 'side',
   entities: [__dirname + '/../**/*.entity.{ts,js}'],
   synchronize: true,
 };
