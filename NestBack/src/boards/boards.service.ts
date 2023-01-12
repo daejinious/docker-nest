@@ -1,7 +1,13 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Board } from './board.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class BoardsService {
+  constructor(
+    @InjectRepository(Board) private boardRepository: Repository<Board>,
+  ) {}
   // getAllBoards(): Board[] {
   //   return this.boards;
   // }
@@ -19,6 +25,16 @@ export class BoardsService {
   //   return board;
   // }
   //
+
+  async getBoardById(id: number): Promise<Board> {
+    const found = await this.boardRepository.findOneBy({ id });
+
+    if (!found) {
+      throw new NotFoundException(`Can't found board with id ${id}`);
+    }
+
+    return found;
+  }
   // getBoardById(id: string): Board {
   //   const board = this.boards.find((board) => id === board.id);
   //
