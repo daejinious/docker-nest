@@ -1,12 +1,13 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
 import { Board } from './board.entity';
+import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 @Injectable()
 export class BoardsService {
   constructor(
-    @InjectRepository(Board) private boardRepository: Repository<Board>,
+    @InjectRepository(Board)
+    private boardRepository: Repository<Board>,
   ) {}
   // getAllBoards(): Board[] {
   //   return this.boards;
