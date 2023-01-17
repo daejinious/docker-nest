@@ -53,6 +53,10 @@ export class BoardsService {
   //   return board;
   // }
   //
+
+  async deleteBoard(id: number) {
+    await this.boardRepository.findAndDelete(id);
+  }
   // removeBoard(id: string): void {
   //   const found = this.getBoardById(id);
   //   this.boards = this.boards.filter((board) => found.id === board.id);
