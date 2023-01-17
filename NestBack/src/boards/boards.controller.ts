@@ -15,6 +15,11 @@ import { Board } from './board.entity';
 export class BoardsController {
   constructor(private readonly boardsService: BoardsService) {}
   //
+
+  @Get()
+  getAll(): Promise<Board[]> {
+    return this.boardsService.getAllBoards();
+  }
   // @Get()
   // getAll(): Board[] {
   //   return this.boardsService.getAllBoards();
@@ -34,7 +39,7 @@ export class BoardsController {
   //
 
   @Get('/:id')
-  getBoardById(@Param('id') id: number) {
+  getBoardById(@Param('id') id: number): Promise<Board> {
     return this.boardsService.getBoardById(id);
   }
   // @Get('/:id')

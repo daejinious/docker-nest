@@ -6,14 +6,19 @@ import { BoardRepository } from './boards.repository';
 @Injectable()
 export class BoardsService {
   constructor(private boardRepository: BoardRepository) {}
+
+  async getAllBoards(): Promise<Board[]> {
+    return await this.boardRepository.find();
+  }
   // getAllBoards(): Board[] {
   //   return this.boards;
   // }
   //
 
-  async createBoard(createBoardDto: CreateBoardDto): Promise<Board> {
+  createBoard(createBoardDto: CreateBoardDto): Promise<Board> {
     return this.boardRepository.createAndSave(createBoardDto);
   }
+
   // createBoard(createBoardDto: CreateBoardDto) {
   //   const { title, description } = createBoardDto;
   //   const board: Board = {
@@ -37,6 +42,7 @@ export class BoardsService {
 
     return found;
   }
+
   // getBoardById(id: string): Board {
   //   const board = this.boards.find((board) => id === board.id);
   //
