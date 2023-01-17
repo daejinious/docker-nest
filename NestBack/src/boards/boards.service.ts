@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { Board } from './board.entity';
 import CreateBoardDto from './dto/create-board.dto';
 import { BoardRepository } from './boards.repository';
+import { BoardStatus } from './board-status.enum';
 
 @Injectable()
 export class BoardsService {
@@ -62,6 +63,14 @@ export class BoardsService {
   //   this.boards = this.boards.filter((board) => found.id === board.id);
   // }
   //
+
+  async updateBoardStatus(id: number, status: BoardStatus): Promise<Board> {
+    const board: Board = await this.getBoardById(id);
+    board.status = status;
+
+    await this.boardRepository.save(board);
+    return board;
+  }
   // updateBoardStatus(id: string, status: BoardStatus): Board {
   //   const board: Board = this.getBoardById(id);
   //   board.status = status;
