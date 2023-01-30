@@ -17,8 +17,8 @@ services:
     env_file:
       - .env
     volumes:
-      - /usr/app/node_modules
-      - ./NestBack:/usr/app
+      - /usr/src/app/node_modules
+      - ./NestBack:/usr/src/app
     command: ['npm', 'run', 'start:dev']
 
   db:

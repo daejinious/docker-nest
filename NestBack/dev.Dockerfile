@@ -1,14 +1,14 @@
 FROM node:18-alpine
 
 # Working Directory
-WORKDIR /usr/app
+WORKDIR /usr/src/app
 
 #Copy dependencies first for effective caching
-COPY package*.json ./
+COPY . .
+
+RUN rm -rf ./node_modules
 
 RUN npm i
-
-COPY . .
 
 RUN npm run build
 

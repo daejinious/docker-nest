@@ -6,6 +6,7 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 import { AuthCredentialsDto } from './dto/auth-credentials.dto';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UserRepository extends Repository<User> {
@@ -15,10 +16,14 @@ export class UserRepository extends Repository<User> {
 
   async createUser(authCredentialsDto: AuthCredentialsDto): Promise<User> {
     const { username, userId, password } = authCredentialsDto;
+
+    const saltRound = await bcrypt.genSalt();
+    const hashedPassword = await bcrypt.hash(password, saltRound);
+
     const user = this.create({
       username,
       user_id: userId,
-      password,
+      password: hashedPassword,
     });
 
     try {
