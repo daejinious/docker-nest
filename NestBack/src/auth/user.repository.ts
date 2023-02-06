@@ -9,10 +9,11 @@ import {
 import { AuthCredentialsDto } from './dto/auth-credentials.dto';
 import * as bcrypt from 'bcrypt';
 import { LoginCredentialsDto } from './dto/login-credentials.dto';
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class UserRepository extends Repository<User> {
-  constructor(private dataSource: DataSource) {
+  constructor(private dataSource: DataSource, private jwtService: JwtService) {
     super(User, dataSource.createEntityManager());
   }
 
@@ -40,12 +41,17 @@ export class UserRepository extends Repository<User> {
     return user;
   }
 
-  async signIn(loginCredentialsDto: LoginCredentialsDto): Promise<string> {
+  async signIn(
+    loginCredentialsDto: LoginCredentialsDto,
+  ): Promise<{ accessToken: string }> {
     const { userId, password } = loginCredentialsDto;
     const user = await this.findOneBy({ user_id: userId });
 
     if (user && (await bcrypt.compare(password, user.password))) {
-      return 'login success';
+      const payload = { userId };
+      const accessToken = this.jwtService.sign(payload);
+
+      return { accessToken };
     }
 
     throw new UnauthorizedException('login failed');
