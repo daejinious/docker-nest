@@ -45,7 +45,7 @@ export class UserRepository extends Repository<User> {
     loginCredentialsDto: LoginCredentialsDto,
   ): Promise<{ accessToken: string }> {
     const { userId, password } = loginCredentialsDto;
-    const user = await this.findOneBy({ user_id: userId });
+    const user = await this.findOne({ where: { user_id: userId } });
 
     if (user && (await bcrypt.compare(password, user.password))) {
       const payload = { userId };
