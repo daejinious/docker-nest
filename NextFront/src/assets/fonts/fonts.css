@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  src: url('./Pretendard-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  src: url('./Pretendard-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 500;
+  src: url('./Pretendard-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 400;
+  src: url('./Pretendard-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 300;
+  src: url('./Pretendard-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NanumSquare';
+  font-style: normal;
+  font-weight: 300;
+  src: url('NanumSquareL.eot');
+  src: local(※), url('NanumSquareL.woff') format('woff');
+}
+@font-face {
+  font-family: 'NanumSquare';
+  font-style: normal;
+  font-weight: 400;
+  src: url('NanumSquareR.eot');
+  src: local(※), url('NanumSquareR.woff') format('woff');
+}
+@font-face {
+  font-family: 'NanumSquare';
+  font-style: normal;
+  font-weight: 700;
+  src: url('NanumSquareB.eot');
+  src: local(※), url('NanumSquareB.woff') format('woff');
+}
+@font-face {
+  font-family: 'NanumSquare';
+  font-style: normal;
+  font-weight: 900;
+  src: url('NanumSquareEB.eot');
+  src: local(※), url('NanumSquareEB.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NotoSerifKR';
+  font-style: normal;
+  font-weight: 400;
+  src: url('NotoSerifKR-Regular.woff');
+  src: local(※), url('NotoSerifKR-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'NotoSerifKR';
+  font-style: normal;
+  font-weight: 600;
+  src: url('NotoSerifKR-SemiBold.woff');
+  src: local(※), url('NotoSerifKR-SemiBold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'NotoSerifKR';
+  font-style: normal;
+  font-weight: 700;
+  src: url('NotoSerifKR-Bold.woff');
+  src: local(※), url('NotoSerifKR-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'NotoSerifKR';
+  font-style: normal;
+  font-weight: 900;
+  src: url('NotoSerifKR-Black.woff');
+  src: local(※), url('NotoSerifKR-Black.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'SCDream';
+  font-style: normal;
+  font-weight: 300;
+  src: local(※), url('SCDream3.woff') format('woff');
+}
+@font-face {
+  font-family: 'SCDream';
+  font-style: normal;
+  font-weight: 500;
+  src: local(※), url('SCDream5.woff') format('woff');
+}
+@font-face {
+  font-family: 'SCDream';
+  font-style: normal;
+  font-weight: 600;
+  src: local(※), url('SCDream6.woff') format('woff');
+}
+@font-face {
+  font-family: 'SCDream';
+  font-style: normal;
+  font-weight: 800;
+  src: local(※), url('SCDream8.woff') format('woff');
+}
+@font-face {
+  font-family: 'SCDream';
+  font-style: normal;
+  font-weight: 900;
+  src: local(※), url('SCDream9.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'tvN';
+  font-style: normal;
+  font-weight: 300;
+  src: url('tvN-Light.woff') format('woff');
+}
+@font-face {
+  font-family: 'tvN';
+  font-style: normal;
+  font-weight: 400;
+  src: url('tvN-Medium.woff') format('woff');
+}
+@font-face {
+  font-family: 'tvN';
+  font-style: normal;
+  font-weight: 700;
+  src: url('tvN-Bold.woff') format('woff');
+}
