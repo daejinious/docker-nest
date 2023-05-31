@@ -1,3 +1,4 @@
+import { ApmRoute } from '@elastic/apm-rum-react';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Layout from './Layout';
@@ -13,7 +14,7 @@ function App() {
   return (
     <Layout>
       <Routes>
-        <Route path="/component" element={<Component />} />
+        <ApmRoute path="/component" element={<Component />} />
         <Route path="/" element={<Main />} />
         <Route path="/shops" element={<Shops />} />
         <Route path="/contents" element={<Contents />} />
